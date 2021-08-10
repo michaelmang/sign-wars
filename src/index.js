@@ -2,15 +2,34 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
+  createHttpLink,
 } from "@apollo/client";
+import { setContext } from '@apollo/client/link/context';
+import dotenv from 'dotenv';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const client = new ApolloClient({
+dotenv.config();
+
+const httpLink = createHttpLink({
   uri: 'https://signwars.hasura.app/v1/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  return {
+    headers: {
+      ...headers,
+      'x-hasura-admin-secret': process.env.REACT_APP_HASURA_SECRET,
+    }
+  }
+});
+
+const client = new ApolloClient({
+  uri: '',
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache()
 });
 

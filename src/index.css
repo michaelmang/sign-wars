@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+.sign {
+  height: 100%;
+  width: 100%;
+  animation: fade-in 0.3s ease-out;
+}
+
+.row {
+  display: flex;
+  height: 25%;
+  width: 100%;
+  border-bottom: solid 0.125rem rgba(100, 100, 100, 50%);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.column {
+  height: 100%;
+  width: 5.88%;
+  border-right: solid 0.125rem rgba(100, 100, 100, 50%);
+  display: flex;
+  align-items: center;
+}
+
+.column:last-child {
+  border-right: none;
+}
+
+.column > input {
+  background: none;
+  border: none;
+  color: white;
+  border-radius: 0.25rem;
+  outline: none;
+  font-family: "Oswald";
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
