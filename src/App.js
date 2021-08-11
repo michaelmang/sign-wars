@@ -297,7 +297,7 @@ function App() {
             <FontAwesomeIcon className="mr-2 text-white" icon={faBullhorn} />
             Announce
           </button>
-          <a className="mt-8" target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/posts/sign-wars?utm_source=badge-review&utm_medium=badge&utm_souce=badge-sign-wars#discussion-body" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/review.svg?post_id=307975&theme=dark" alt="Sign Wars - Like Twitter and Shopping Mall Signs Had a Baby | Product Hunt" style={{ width: 250, height: 54 }} /></a>
+          <a className="mt-8" rel="noopener noreferrer" href="https://www.producthunt.com/posts/sign-wars?utm_source=badge-review&utm_medium=badge&utm_souce=badge-sign-wars#discussion-body" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/review.svg?post_id=307975&theme=dark" alt="Sign Wars - Like Twitter and Shopping Mall Signs Had a Baby | Product Hunt" style={{ width: 250, height: 54 }} /></a>
         </div>
         <div className="flex flex-col w-2/3">
           <div className={styles.note}>
