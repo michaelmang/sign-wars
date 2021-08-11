@@ -154,10 +154,11 @@ function Sign({
       {!displayOnly && (
         <div className="flex mt-4 justify-end">
           <button
-            className="mr-2 bg-blue-500 hover:bg-blue-600 text-white text-lg px-4 py-2 rounded-lg"
+            className={`mr-2 ${isEmpty(characters)? 'bg-gray-800 cursor-not-allowed text-black' : 'cursor-pointer bg-blue-500 hover:bg-blue-600 text-white'} text-lg px-4 py-2 rounded-lg`}
+            disabled={isEmpty(characters)}
             onClick={handleSubmit}
           >
-            <FontAwesomeIcon className="mr-2 text-white" icon={faBullhorn} />
+            <FontAwesomeIcon className={`mr-2 ${isEmpty(characters) ? 'text-black' : 'text-white'}`} icon={faBullhorn} />
             Announce
           </button>
           <button className="text-white" onClick={handleClear}>
