@@ -188,7 +188,7 @@ const INCREMENT_LIKES = gql`
 
 function App() {
   const [isAnnounceModalOpen, setIsAnnounceModalOpen] = useState(false);
-  const [hasLiked, setHasLiked] = useState(false);
+  const [likes, setLikes] = useState({});
   const [newAnnouncements, setNewAnnouncements] = useState([]);
   const [typedHandle, setTypedHandle] = useState("");
   const [hasEnteredHandle, setHasEnteredHandle] = useState(handle);
@@ -339,17 +339,20 @@ function App() {
                       <div className="mr-4">
                         <FontAwesomeIcon
                           className={`mr-1 ${
-                            hasLiked ? "text-red-500" : ""
+                            likes[sign.id] ? "text-red-500" : ""
                           } hover:text-red-500`}
                           icon={faHeart}
                           onClick={() => {
-                            setHasLiked(true);
+                            setLikes({
+                              ...likes,
+                              [sign.id]: true,
+                            });
                             incrementLikes({
                               variables: { id: sign.id },
                             });
                           }}
                         />
-                        {hasLiked ? sign.likes.length + 1 : sign.likes.length}
+                        {likes[sign.id] ? sign.likes.length + 1 : sign.likes.length}
                       </div>
                       {/* <div>
                         <FontAwesomeIcon
